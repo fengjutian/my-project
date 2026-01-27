@@ -1,63 +1,80 @@
 import Image from "next/image";
 
 export default function Home() {
+  // 项目数据数组
+  const projects = [
+    {
+      id: 1,
+      name: "Next.js 项目",
+      image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=next.js%20project%20logo&image_size=square",
+      description: "使用 Next.js 构建的现代化 React 应用，支持服务端渲染和静态生成。",
+      link: "https://nextjs.org"
+    },
+    {
+      id: 2,
+      name: "React 组件库",
+      image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=react%20components%20library&image_size=square",
+      description: "一套完整的 React 组件库，包含各种常用 UI 组件。",
+      link: "https://react.dev"
+    },
+    {
+      id: 3,
+      name: "Tailwind CSS 模板",
+      image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=tailwind%20css%20template&image_size=square",
+      description: "使用 Tailwind CSS 构建的响应式网站模板。",
+      link: "https://tailwindcss.com"
+    },
+    {
+      id: 4,
+      name: "Node.js API",
+      image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=node.js%20api%20server&image_size=square",
+      description: "基于 Node.js 构建的 RESTful API 服务。",
+      link: "https://nodejs.org"
+    }
+  ];
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <main className="flex min-h-screen w-full max-w-6xl flex-col items-center py-32 px-16 bg-white dark:bg-black">
         <Image
-          className="dark:invert"
+          className="dark:invert mb-16"
           src="/next.svg"
           alt="Next.js logo"
           width={100}
           height={20}
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <h1 className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 mb-12">
+          项目展示
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+          {projects.map((project) => (
+            <div key={project.id} className="rounded-xl border border-black/[.08] p-4 transition-shadow hover:shadow-lg dark:border-white/[.145]">
+              <div className="aspect-video mb-3 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  width={300}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h2 className="text-lg font-semibold mb-2 text-black dark:text-zinc-50">
+                {project.name}
+              </h2>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3 line-clamp-3">
+                {project.description}
+              </p>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                查看详情 →
+              </a>
+            </div>
+          ))}
         </div>
       </main>
     </div>
