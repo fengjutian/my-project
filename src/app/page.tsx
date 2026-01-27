@@ -11,10 +11,10 @@ export default function Home() {
   const projects = [
     {
       id: 1,
-      name: "Next.js 项目",
+      name: "catshell",
       image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=next.js%20project%20logo&image_size=square",
-      description: "使用 Next.js 构建的现代化 React 应用，支持服务端渲染和静态生成。",
-      link: "https://nextjs.org"
+      description: "一个用Rust编写的简单而功能丰富的Shell命令实现，支持多种常用Unix/Linux风格命令，带有emoji增强的用户体验。",
+      link: "https://github.com/fengjutian/catshell"
     },
     {
       id: 2,
