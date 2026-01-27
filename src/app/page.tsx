@@ -1,6 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  // 搜索状态
+  const [searchTerm, setSearchTerm] = useState("");
+  
   // 项目数据数组
   const projects = [
     {
@@ -44,11 +50,25 @@ export default function Home() {
           height={20}
           priority
         />
-        <h1 className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 mb-12">
+        <h1 className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 mb-6">
           项目展示
         </h1>
+        <div className="w-full max-w-md mb-8">
+          <input
+            type="text"
+            placeholder="搜索项目..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
-          {projects.map((project) => (
+          {projects
+            .filter((project) =>
+              project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              project.description.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((project) => (
             <div key={project.id} className="rounded-xl border border-black/[.08] p-4 transition-shadow hover:shadow-lg dark:border-white/[.145]">
               <div className="aspect-video mb-3 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800">
                 <Image
