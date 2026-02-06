@@ -143,8 +143,8 @@ export const projects = [
    {
       id: 21,
       name: "interview-question",
-      image: "static/interview-question.png",
+      image: "statics/interview-question.jpg",
       description: "基于 Next.js 构建的 Markdown 博客应用",
-      link: "https://github.com/fengjutian/interview-question`"
+      link: "https://github.com/fengjutian/interview-question"
     }
   ];
