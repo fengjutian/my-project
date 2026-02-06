@@ -162,9 +162,6 @@ export default function Home() {
           height={20}
           priority
         />
-        <h1 className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 mb-6">
-          项目展示
-        </h1>
         <div className="w-full max-w-md mb-8">
           <input
             type="text"
