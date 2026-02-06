@@ -152,6 +152,7 @@ export const projects = [
       name: "mini-create-app",
       image: "statics/interview-question.jpg",
       description: "快速创建现代化前端项目的命令行工具",
-      link: "https://github.com/fengjutian/mini-create-app"
+      link: "https://github.com/fengjutian/mini-create-app",
+      tags: ['JavaScript', "TypeScript", "CLI"]
     }
   ];
