@@ -146,5 +146,12 @@ export const projects = [
       image: "statics/interview-question.jpg",
       description: "基于 Next.js 构建的 Markdown 博客应用",
       link: "https://github.com/fengjutian/interview-question"
+    },
+    {
+      id: 22,
+      name: "mini-create-app",
+      image: "statics/interview-question.jpg",
+      description: "快速创建现代化前端项目的命令行工具",
+      link: "https://github.com/fengjutian/mini-create-app"
     }
   ];
