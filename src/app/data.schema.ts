@@ -154,5 +154,21 @@ export const projects = [
       description: "快速创建现代化前端项目的命令行工具",
       link: "https://github.com/fengjutian/mini-create-app",
       tags: ['JavaScript', "TypeScript", "CLI"]
+    },
+    {
+      id: 23,
+      name: "AI-reader",
+      image: "statics/interview-question.jpg",
+      description: "快速创建现代化前端项目的命令行工具",
+      link: "https://github.com/fengjutian/AI-reader",
+      tags: ['Dart', "Flutter"]
+    },
+   {
+      id: 24,
+      name: "MiniReact",
+      image: "statics/interview-question.jpg",
+      description: "MiniReact 是一个简化版的 React 框架实现",
+      link: "https://github.com/fengjutian/MiniReact",
+      tags: ["React"]
     }
   ];
